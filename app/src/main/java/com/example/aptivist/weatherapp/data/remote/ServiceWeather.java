@@ -13,7 +13,7 @@ public interface ServiceWeather {
 
 
     @GET("/data/2.5/forecast")
-    Call<WeatherObj> getForecast(@Query("zip") int zipcode, @Query("appid") String apiKey);
+    Call<WeatherObj> getForecast(@Query("zip") int zipcode, @Query("appid") String apiKey,@Query("units") String units);
 
     class Factory {
         private Retrofit createRetrofit(){
