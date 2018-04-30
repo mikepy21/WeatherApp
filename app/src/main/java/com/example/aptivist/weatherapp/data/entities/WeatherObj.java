@@ -1,17 +1,26 @@
 
-package com.example.aptivist.weatherapp.data.entities;
+package com.example.android.watherapp.data.entities;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class WeatherObj {
 
+    @SerializedName("cod")
+    @Expose
     private String cod;
+    @SerializedName("message")
+    @Expose
     private Double message;
+    @SerializedName("cnt")
+    @Expose
     private Integer cnt;
-    private java.util.List<List> list = null;
+    @SerializedName("list")
+    @Expose
+    private java.util.List<ListWeather> listWeather = null;
+    @SerializedName("city")
+    @Expose
     private City city;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getCod() {
         return cod;
@@ -37,12 +46,12 @@ public class WeatherObj {
         this.cnt = cnt;
     }
 
-    public java.util.List<List> getList() {
-        return list;
+    public java.util.List<ListWeather> getListWeather() {
+        return listWeather;
     }
 
-    public void setList(java.util.List<List> list) {
-        this.list = list;
+    public void setListWeather(java.util.List<ListWeather> listWeather) {
+        this.listWeather = listWeather;
     }
 
     public City getCity() {
@@ -51,14 +60,6 @@ public class WeatherObj {
 
     public void setCity(City city) {
         this.city = city;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

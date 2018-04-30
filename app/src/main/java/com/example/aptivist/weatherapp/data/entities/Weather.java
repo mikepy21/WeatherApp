@@ -1,16 +1,23 @@
 
-package com.example.aptivist.weatherapp.data.entities;
+package com.example.android.watherapp.data.entities;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Weather {
 
+    @SerializedName("id")
+    @Expose
     private Integer id;
+    @SerializedName("main")
+    @Expose
     private String main;
+    @SerializedName("description")
+    @Expose
     private String description;
+    @SerializedName("icon")
+    @Expose
     private String icon;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getId() {
         return id;
@@ -42,14 +49,6 @@ public class Weather {
 
     public void setIcon(String icon) {
         this.icon = icon;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -1,14 +1,17 @@
 
-package com.example.aptivist.weatherapp.data.entities;
+package com.example.android.watherapp.data.entities;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Wind {
 
+    @SerializedName("speed")
+    @Expose
     private Double speed;
+    @SerializedName("deg")
+    @Expose
     private Double deg;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Double getSpeed() {
         return speed;
@@ -24,14 +27,6 @@ public class Wind {
 
     public void setDeg(Double deg) {
         this.deg = deg;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

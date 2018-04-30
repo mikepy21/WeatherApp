@@ -1,14 +1,17 @@
 
-package com.example.aptivist.weatherapp.data.entities;
+package com.example.android.watherapp.data.entities;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Coord {
 
+    @SerializedName("lat")
+    @Expose
     private Double lat;
+    @SerializedName("lon")
+    @Expose
     private Double lon;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Double getLat() {
         return lat;
@@ -24,14 +27,6 @@ public class Coord {
 
     public void setLon(Double lon) {
         this.lon = lon;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

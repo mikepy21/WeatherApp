@@ -1,20 +1,35 @@
 
-package com.example.aptivist.weatherapp.data.entities;
+package com.example.android.watherapp.data.entities;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Main {
 
+    @SerializedName("temp")
+    @Expose
     private Double temp;
+    @SerializedName("temp_min")
+    @Expose
     private Double tempMin;
+    @SerializedName("temp_max")
+    @Expose
     private Double tempMax;
+    @SerializedName("pressure")
+    @Expose
     private Double pressure;
+    @SerializedName("sea_level")
+    @Expose
     private Double seaLevel;
+    @SerializedName("grnd_level")
+    @Expose
     private Double grndLevel;
+    @SerializedName("humidity")
+    @Expose
     private Integer humidity;
-    private Integer tempKf;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @SerializedName("temp_kf")
+    @Expose
+    private Double tempKf;
 
     public Double getTemp() {
         return temp;
@@ -72,20 +87,12 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public Integer getTempKf() {
+    public Double getTempKf() {
         return tempKf;
     }
 
-    public void setTempKf(Integer tempKf) {
+    public void setTempKf(Double tempKf) {
         this.tempKf = tempKf;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
